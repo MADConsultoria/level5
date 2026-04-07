@@ -1,0 +1,784 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Five Level Group | Da Gestão ao Resultado</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#c8c6c5",
+              "tertiary": "#1c0d00",
+              "outline-variant": "#c4c7c7",
+              "inverse-primary": "#c8c6c5",
+              "on-primary-fixed": "#1b1c1c",
+              "on-error-container": "#93000a",
+              "surface-tint": "#5f5e5e",
+              "on-surface": "#1b1c1c",
+              "on-primary-fixed-variant": "#474746",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f3f0ef",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "surface-bright": "#fcf9f8",
+              "on-secondary-fixed": "#001e2e",
+              "on-background": "#1b1c1c",
+              "surface-variant": "#e4e2e1",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#444748",
+              "outline": "#747878",
+              "on-primary": "#ffffff",
+              "inverse-surface": "#303030",
+              "surface-container-low": "#f6f3f2",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#004c6d",
+              "primary-container": "#252525",
+              "on-tertiary-fixed": "#2b1700",
+              "secondary-fixed-dim": "#85cfff",
+              "tertiary-fixed-dim": "#ffb964",
+              "background": "#fcf9f8",
+              "secondary": "#00658f",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#c57c06",
+              "secondary-container": "#55c0fd",
+              "primary-fixed": "#e4e2e1",
+              "surface-container": "#f0eded",
+              "surface-container-highest": "#e4e2e1",
+              "secondary-fixed": "#c7e7ff",
+              "on-primary-container": "#8d8c8c",
+              "primary": "#101010",
+              "surface-dim": "#dcd9d9",
+              "surface": "#fcf9f8",
+              "tertiary-container": "#382000",
+              "tertiary-fixed": "#ffddba",
+              "surface-container-high": "#eae7e7",
+              "on-secondary-fixed-variant": "#004c6c",
+              "on-tertiary-fixed-variant": "#663e00"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gradient-bar {
+            background: linear-gradient(90deg, #FDAA3D 0%, #FB2B2B 25%, #00CC72 50%, #1F9CD7 75%, #6161FF 100%);
+        }
+        .editorial-shadow {
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.04);
+        }
+        .section-watermark {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .section-watermark::after {
+            content: attr(data-watermark);
+            position: absolute;
+            left: 50%;
+            bottom: -0.12em;
+            transform: translateX(-50%);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(3rem, 18vw, 20rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 0.8;
+            white-space: nowrap;
+            color: rgba(16, 16, 16, 0.06);
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+        .section-watermark-left::after {
+            left: 2rem;
+            transform: none;
+            text-align: left;
+        }
+        .section-watermark > * {
+            position: relative;
+            z-index: 1;
+        }
+        .section-watermark-dark::after {
+            color: rgba(255, 255, 255, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary/30">
+<div class="fixed top-0 left-0 w-full h-[2px] gradient-bar z-[60]"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-12 py-4 max-w-full mx-auto">
+<a href="./index.html" class="block" aria-label="Five Level Group">
+<img src="./assets/images/logo.png" alt="Five Level Group" class="h-12 w-auto object-contain"/>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-manrope tracking-tight font-bold uppercase text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border-b-2 border-transparent hover:border-[#FB2B2B] pb-1 transition-colors" href="./pages/consultoria.html">Consultoria</a>
+<a class="font-manrope tracking-tight font-bold uppercase text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border-b-2 border-transparent hover:border-[#1F9CD7] pb-1 transition-colors" href="./pages/mentoria.html">Mentoria</a>
+<a class="font-manrope tracking-tight font-bold uppercase text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border-b-2 border-transparent hover:border-[#6161FF] pb-1 transition-colors" href="./pages/academia.html">Academia</a>
+<a class="font-manrope tracking-tight font-bold uppercase text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border-b-2 border-transparent hover:border-[#00CC72] pb-1 transition-colors" href="./pages/conselho.html">Conselho</a>
+<a class="font-manrope tracking-tight font-bold uppercase text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border-b-2 border-transparent hover:border-[#FDAA3D] pb-1 transition-colors" href="./pages/ferramentas.html">Ferramentas</a>
+<a class="font-manrope tracking-tight font-bold uppercase text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border-b-2 border-transparent hover:border-[#FB2B2B] pb-1 transition-colors" href="./pages/treinamentos.html">Treinamentos</a>
+</div>
+<button type="button" data-open-lead-modal class="bg-primary text-on-primary px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-all active:scale-95 duration-200">
+            Fale Conosco
+        </button>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-white/90 z-10"></div>
+<img alt="" class="w-full h-full object-cover grayscale opacity-30" data-alt="Modern spacious corporate office with clean lines, large windows, and minimalist furniture representing organizational order and clarity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ0PZCdJL8LGt9mD_Mp-ke-nfyBiuS1SLNEQmCFM05RRkImAycvUyTrP3wY1S6TByQvBX8r3QnsPCXpj33Z1Hl1JWp7zYjCyon2Fqnu2-xhXOwBZgbKsqDnPQgQTA9EAFLMfY3Ywl0O1VSv04KIeKNORweJKIH9GJ5Zmn_QrL6_8-QnW2Qa6n7KLLoOjvRvCysRJZzCGrogGhulXQUUMTIfcaiT-qjiifJgFsNWd4sgxSkYaNcsBHmPaHi_VlJxbfU6dAKYgSvoeTM"/>
+</div>
+<img src="./assets/images/seta-p.png" alt="" aria-hidden="true" class="pointer-events-none select-none absolute right-0 top-1/2 -translate-y-1/2 z-10 w-[31.5rem] md:w-[55rem] lg:w-[71rem]" style="opacity: 0.14;"/>
+<div class="container mx-auto px-12 relative z-20">
+<div class="max-w-4xl">
+<div class="h-1 w-32 gradient-bar mb-8"></div>
+<div class="relative">
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold text-primary leading-[0.95] tracking-tighter mb-8 pr-20 md:pr-44">
+                    Sua empresa do <span class="text-secondary italic">caos</span> à rotina executável e previsível
+                </h1>
+</div>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                    Ajudamos empresas a ganharem eficiência, clareza e liberdade real para o dono delegar e respirar. Transformamos esforço desordenado em lucro estruturado.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button type="button" data-open-lead-modal class="bg-primary text-on-primary px-10 py-5 font-bold uppercase tracking-widest text-sm hover:translate-y-[-2px] transition-transform shadow-lg">
+                        Fale com um especialista
+                    </button>
+<a href="#metodo-gmv" class="inline-flex items-center justify-center border border-outline px-10 py-5 font-bold uppercase tracking-widest text-sm hover:bg-surface-container-low transition-colors">
+                        Conhecer o Método
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- The Problem Section -->
+<section class="bg-surface-container-low py-24">
+<div class="container mx-auto px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+<div>
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-6">O ciclo do caos operacional</h2>
+<p class="text-on-surface-variant mb-12 text-lg">Sua empresa cresceu, mas o seu tempo sumiu. O que deveria ser um ativo se tornou uma prisão de urgências.</p>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<div class="bg-error/10 p-3 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">Incêndios Diários</h4>
+<p class="text-sm text-on-surface-variant">Você acorda para apagar fogos e resolver problemas que sua equipe deveria dominar.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-error/10 p-3 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="running_with_errors">running_with_errors</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">Sobrecarga Mental</h4>
+<p class="text-sm text-on-surface-variant">A sensação de que se você não estiver presente, nada funciona como deveria. As entregas variam demais, metas não se sustentam e a performance depende de cobrança constante.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-error/10 p-3 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="trending_down">trending_down</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">Invisibilidade Financeira</h4>
+<p class="text-sm text-on-surface-variant">Faturamento alto, mas a margem é um mistério e o caixa vive no limite.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-error/10 p-3 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="person_remove">person_remove</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">Rotatividade Acima do Normal</h4>
+<p class="text-sm text-on-surface-variant">Você treina, organiza e, pouco depois, perde talentos-chave, reiniciando o ciclo da operação.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-error/10 p-3 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="query_stats">query_stats</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">Vendas Sem Previsibilidade</h4>
+<p class="text-sm text-on-surface-variant">Há picos e quedas bruscas no faturamento, dificultando decisões e planejamento de crescimento.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-error/10 p-3 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="conversion_path">conversion_path</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">Marketing Complexo Demais</h4>
+<p class="text-sm text-on-surface-variant">A operação é enxuta, mas o marketing exige uma estrutura pesada, cara e difícil de manter.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-2 editorial-shadow border-t-4 border-t-error self-center">
+<img alt="" class="w-full h-[500px] object-cover" data-alt="A stressed business executive in a modern office looking at complex spread sheets reflecting corporate chaos and overwhelming work" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlWYzanEIlb2-HJeCNC3_-Wdg61iEyYgUH9XJkoTUB-a0L31_ojAABP_kIpdJVw4LA4DAE5aSsXDMOk9gRhGfxYeIKkKRNNk6kWrkFO1cpPtKoEW0xlEKGRZ9erRbaVVbVrw7f_K09RkOEpgyjcT2lXXtupM4QKfZ7jZdUU9ytfdAeiCBZHhsSDiMXrVo_eyFPovBCli7KUBFWxjupmXo5ntbX-naoWBE3YITAhjKaLNNPjaV5R7g6tk6jqO0SDdP4iYTS4AlosxB0"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Our 5 Management Areas -->
+<section class="py-24 bg-white">
+<div class="container mx-auto px-12">
+<div class="mb-16">
+<span class="text-xs font-bold uppercase tracking-[0.3em] text-secondary">A Arquitetura do Sucesso</span>
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter mt-4">Nossos 5 Pilares de Gestão</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-1">
+<!-- Financeiro -->
+<button type="button" data-open-pillar-modal="0" class="group relative overflow-hidden bg-surface-container-low p-10 h-[400px] flex flex-col justify-end transition-all hover:bg-surface-container-high border-t-4 border-t-[#1F9CD7] text-left focus:outline-none focus:ring-2 focus:ring-secondary/40">
+<span class="inline-flex items-center gap-1 absolute top-4 right-4 bg-zinc-900 text-white text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm leading-none">arrow_outward</span>
+<span class="md:hidden">Toque para saber mais</span>
+<span class="hidden md:inline">Saiba mais</span>
+</span>
+<span class="material-symbols-outlined text-4xl mb-auto text-[#1F9CD7]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Financeiro</h3>
+<p class="text-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 duration-300">Margem de lucro real e controle absoluto do fluxo de caixa.</p>
+</button>
+<!-- Comercial -->
+<button type="button" data-open-pillar-modal="1" class="group relative overflow-hidden bg-surface-container-low p-10 h-[400px] flex flex-col justify-end transition-all hover:bg-surface-container-high border-t-4 border-t-[#FB2B2B] text-left focus:outline-none focus:ring-2 focus:ring-secondary/40">
+<span class="inline-flex items-center gap-1 absolute top-4 right-4 bg-zinc-900 text-white text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm leading-none">arrow_outward</span>
+<span class="md:hidden">Toque para saber mais</span>
+<span class="hidden md:inline">Saiba mais</span>
+</span>
+<span class="material-symbols-outlined text-4xl mb-auto text-[#FB2B2B]" data-icon="sell">sell</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Comercial</h3>
+<p class="text-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 duration-300">Máquina de vendas previsível com processos de fechamento otimizados.</p>
+</button>
+<!-- Marketing -->
+<button type="button" data-open-pillar-modal="2" class="group relative overflow-hidden bg-surface-container-low p-10 h-[400px] flex flex-col justify-end transition-all hover:bg-surface-container-high border-t-4 border-t-[#6161FF] text-left focus:outline-none focus:ring-2 focus:ring-secondary/40">
+<span class="inline-flex items-center gap-1 absolute top-4 right-4 bg-zinc-900 text-white text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm leading-none">arrow_outward</span>
+<span class="md:hidden">Toque para saber mais</span>
+<span class="hidden md:inline">Saiba mais</span>
+</span>
+<span class="material-symbols-outlined text-4xl mb-auto text-[#6161FF]" data-icon="campaign">campaign</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Marketing</h3>
+<p class="text-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 duration-300">Posicionamento de autoridade e atração constante de leads qualificados.</p>
+</button>
+<!-- RH -->
+<button type="button" data-open-pillar-modal="3" class="group relative overflow-hidden bg-surface-container-low p-10 h-[400px] flex flex-col justify-end transition-all hover:bg-surface-container-high border-t-4 border-t-[#FDAA3D] text-left focus:outline-none focus:ring-2 focus:ring-secondary/40">
+<span class="inline-flex items-center gap-1 absolute top-4 right-4 bg-zinc-900 text-white text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm leading-none">arrow_outward</span>
+<span class="md:hidden">Toque para saber mais</span>
+<span class="hidden md:inline">Saiba mais</span>
+</span>
+<span class="material-symbols-outlined text-4xl mb-auto text-[#FDAA3D]" data-icon="groups">groups</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Liderança e Recursos Humanos</h3>
+<p class="text-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 duration-300">Cultura de alta performance e recrutamento técnico impecável.</p>
+</button>
+<!-- Gestão -->
+<button type="button" data-open-pillar-modal="4" class="group relative overflow-hidden bg-surface-container-low p-10 h-[400px] flex flex-col justify-end transition-all hover:bg-surface-container-high border-t-4 border-t-[#00CC72] text-left focus:outline-none focus:ring-2 focus:ring-secondary/40">
+<span class="inline-flex items-center gap-1 absolute top-4 right-4 bg-zinc-900 text-white text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm leading-none">arrow_outward</span>
+<span class="md:hidden">Toque para saber mais</span>
+<span class="hidden md:inline">Saiba mais</span>
+</span>
+<span class="material-symbols-outlined text-4xl mb-auto text-[#00CC72]" data-icon="architecture">architecture</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Gestão e estratégia</h3>
+<p class="text-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 duration-300">Estratégia, governança e formação de conselho consultivo.</p>
+</button>
+</div>
+</div>
+</section>
+<!-- Method GMV -->
+<section id="metodo-gmv" data-watermark="RESULT" class="py-24 bg-primary text-white overflow-hidden relative section-watermark section-watermark-dark section-watermark-left">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10">
+<div class="w-full h-full gradient-bar"></div>
+</div>
+<div class="container mx-auto px-12 relative z-10">
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="flex-1">
+<h2 class="font-headline text-5xl font-extrabold mb-8">Método GMV:<br/><span class="text-secondary italic">Gestão Mínima Viável</span></h2>
+<p class="text-xl text-on-primary-container leading-relaxed mb-8">
+                        Nós acreditamos na precisão cirúrgica. Não implementamos sistemas complexos que sua equipe vai ignorar. Implementamos a menor mudança possível que gera o maior deslocamento de resultado.
+                    </p>
+<div class="h-0.5 w-full bg-zinc-800 mb-8">
+<div class="h-full w-1/3 gradient-bar"></div>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span>Simplificação de processos operacionais</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span>Rotinas de acompanhamento semanais</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span>Indicadores-chave (KPIs) visíveis</span>
+</li>
+</ul>
+</div>
+<div class="flex-1 bg-zinc-900 p-12 border border-zinc-800 editorial-shadow" id="gmv-progress-card">
+<div class="text-center">
+<div class="text-6xl font-headline font-extrabold text-[#FDAA3D] mb-4" id="gmv-level-value">Level 1</div>
+<p class="text-sm uppercase tracking-widest text-zinc-400">Aumento médio de eficiência operacional nos primeiros 90 dias</p>
+</div>
+<div class="mt-12 space-y-6">
+<div class="bg-zinc-800 h-2 w-full rounded-full overflow-hidden">
+<div class="h-full w-0 gradient-bar transition-all duration-700 ease-out" id="gmv-progress-bar"></div>
+</div>
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter">
+<span>Início: Caos Operacional</span>
+<span>Destino: Level 5</span>
+</div>
+<div class="border border-zinc-800 bg-zinc-950/60 p-5 min-h-[156px] md:min-h-[132px]">
+<p class="text-[11px] md:text-xs uppercase tracking-[0.18em] text-zinc-400 mb-3" id="gmv-level-title">Level 1</p>
+<p class="text-sm md:text-base text-zinc-100 leading-relaxed" id="gmv-level-description">Empresa no improviso — tudo é urgente, o dono apaga incêndio o dia inteiro e a operação depende de “quem lembra” e “quem dá conta”.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How we work (Products) -->
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-12">
+<h2 class="font-headline text-4xl font-bold mb-16 text-center">Nossas Soluções</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Consultoria -->
+<div class="bg-white p-8 editorial-shadow group hover:translate-y-[-8px] transition-all">
+<h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Consultoria</h3>
+<p class="text-on-surface-variant text-sm mb-6">Implementação de POPs e rotinas operacionais no coração do seu negócio.</p>
+<div class="h-1 w-full gradient-bar mb-6"></div>
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">Execução Pura</span>
+</div>
+<!-- Mentoria -->
+<div class="bg-white p-8 editorial-shadow group hover:translate-y-[-8px] transition-all">
+<h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Mentoria</h3>
+<p class="text-on-surface-variant text-sm mb-6">Formação estratégica para líderes e donos de empresas focados em escala.</p>
+<div class="h-1 w-full gradient-bar mb-6"></div>
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">Liderança</span>
+</div>
+<!-- Academia -->
+<div class="bg-white p-8 editorial-shadow group hover:translate-y-[-8px] transition-all">
+<h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Academia</h3>
+<p class="text-on-surface-variant text-sm mb-6">Acesso contínuo a aulas semanais e treinamento para sua equipe chave.</p>
+<div class="h-1 w-full gradient-bar mb-6"></div>
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">Aprendizado</span>
+</div>
+<!-- Treinamentos -->
+<div class="bg-white p-8 editorial-shadow group hover:translate-y-[-8px] transition-all">
+<h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Treinamentos</h3>
+<p class="text-on-surface-variant text-sm mb-6">Treinamentos práticos para elevar execução, performance do time e padronização da operação.</p>
+<div class="h-1 w-full gradient-bar mb-6"></div>
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">Capacitação</span>
+</div>
+<!-- Ferramentas -->
+<div class="bg-white p-8 editorial-shadow group hover:translate-y-[-8px] transition-all">
+<h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Ferramentas</h3>
+<p class="text-on-surface-variant text-sm mb-6">Modelos, planilhas e recursos aplicáveis no dia a dia para acelerar organização e tomada de decisão.</p>
+<div class="h-1 w-full gradient-bar mb-6"></div>
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">Aplicação Imediata</span>
+</div>
+<!-- Conselho -->
+<div class="bg-white p-8 editorial-shadow group hover:translate-y-[-8px] transition-all">
+<h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Conselho</h3>
+<p class="text-on-surface-variant text-sm mb-6">Acompanhamento VIP de alto ticket para governança e proteção de patrimônio.</p>
+<div class="h-1 w-full gradient-bar mb-6"></div>
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">VIP Executive</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Target Audience & Beliefs -->
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div>
+<h2 class="font-headline text-4xl font-bold mb-8">Para quem é o Level 5?</h2>
+<p class="text-lg mb-8">Focamos em empresas que já provaram seu valor no mercado, mas estão travadas na operação.</p>
+<div class="bg-white p-8 border-l-8 border-secondary editorial-shadow">
+<div class="text-3xl font-headline font-bold mb-2">Empresas que faturam até 2 milhões por mês</div>
+<p class="text-on-surface-variant">Empresas com faturamento consolidado que buscam profissionalização executiva.</p>
+</div>
+<div class="mt-8 text-sm text-on-surface-variant italic">
+                        *Especialmente empresas de serviço, clínicas, escritórios, agências e hubs de tecnologia.
+                    </div>
+</div>
+<div>
+<h3 class="font-headline text-2xl font-bold mb-12">Você se identifica com estas crenças?</h3>
+<div class="space-y-6">
+<blockquote class="bg-white p-6 relative border border-outline-variant/30 italic text-on-surface-variant">
+                            "Se eu não acompanhar de perto, as coisas saem do trilho."
+                            <span class="absolute -top-3 -left-3 text-secondary material-symbols-outlined" data-icon="format_quote">format_quote</span>
+</blockquote>
+<blockquote class="bg-white p-6 relative border border-outline-variant/30 italic text-on-surface-variant">
+                            "É difícil encontrar pessoas tão comprometidas quanto eu."
+                            <span class="absolute -top-3 -left-3 text-secondary material-symbols-outlined" data-icon="format_quote">format_quote</span>
+</blockquote>
+<blockquote class="bg-white p-6 relative border border-outline-variant/30 italic text-on-surface-variant">
+                            "Eu sinto que carrego o piano sozinho."
+                            <span class="absolute -top-3 -left-3 text-secondary material-symbols-outlined" data-icon="format_quote">format_quote</span>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 bg-white relative overflow-hidden">
+<div class="container mx-auto px-12 text-center max-w-4xl relative z-10">
+<div class="h-1 w-20 gradient-bar mx-auto mb-12"></div>
+<h2 class="font-headline text-6xl font-extrabold tracking-tighter mb-8 leading-tight">Transforme seu caos em <span class="text-secondary italic">lucro</span> e paz.</h2>
+<p class="text-xl text-on-surface-variant mb-12">Dê o primeiro passo rumo à previsibilidade executiva. Agende agora um diagnóstico da sua operação atual.</p>
+<a href="https://calendar.app.google/h4aX8hQeoQoZ8jGq5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary text-on-primary px-12 py-6 font-bold uppercase tracking-widest text-lg hover:scale-105 transition-transform shadow-2xl">
+                Agendar diagnóstico gratuito
+            </a>
+</div>
+<div class="absolute bottom-0 left-0 w-full opacity-5 pointer-events-none">
+<h2 class="font-headline text-[20vw] font-black uppercase tracking-tighter leading-none select-none">EFFICIENCY</h2>
+</div>
+</section>
+<!-- Footer -->
+<div class="w-full h-[2px] gradient-bar"></div>
+<footer class="w-full bg-zinc-950 text-zinc-100 grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16">
+<div>
+<a href="#" class="inline-block mb-6" aria-label="Five Level Group">
+<img src="./assets/images/logo-b.png" alt="Five Level Group" class="h-14 w-auto object-contain"/>
+</a>
+<p class="font-inter text-sm tracking-wide text-zinc-300">Architectural Ledger Design. Estruturando o crescimento sustentável de empresas de serviços no Brasil.</p>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Links Rápidos</h4>
+<ul class="grid grid-cols-2 gap-4">
+<li><a class="font-inter text-sm tracking-wide text-zinc-300 hover:text-white hover:underline decoration-[#FB2B2B] decoration-2 underline-offset-4" href="https://share.google/tyRm1t0poPjPCHBMf" target="_blank" rel="noopener noreferrer">Depoimentos</a></li>
+<li><a class="font-inter text-sm tracking-wide text-zinc-300 hover:text-white hover:underline decoration-[#1F9CD7] decoration-2 underline-offset-4" href="https://www.youtube.com/@metodomad/" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+<li><a class="font-inter text-sm tracking-wide text-zinc-300 hover:text-white hover:underline decoration-[#6161FF] decoration-2 underline-offset-4" href="https://wa.me/5511989904848" target="_blank" rel="noopener noreferrer">Contato</a></li>
+<li><a class="font-inter text-sm tracking-wide text-zinc-300 hover:text-white hover:underline decoration-[#FDAA3D] decoration-2 underline-offset-4" href="https://br.linkedin.com/company/madconsultoria" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+<li><a class="font-inter text-sm tracking-wide text-zinc-300 hover:text-white hover:underline decoration-[#00CC72] decoration-2 underline-offset-4" href="https://www.instagram.com/level5.group/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+</ul>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest mb-6">Nosso Endereço</h4>
+<p class="font-inter text-sm tracking-wide text-zinc-300">R. Caraíbas, 823 - Pompeia, São Paulo - SP, 05022-000</p>
+</div>
+<p class="font-inter text-sm tracking-wide text-zinc-300 mt-8">© 2024 Five Level Group. Architectural Ledger Design.</p>
+</div>
+</footer>
+<div id="lead-modal" class="fixed inset-0 z-[70] hidden" aria-hidden="true">
+<div class="absolute inset-0 bg-black/70" data-close-lead-modal></div>
+<div class="relative z-10 min-h-full flex items-center justify-center p-4">
+<div class="w-full max-w-2xl bg-white border border-zinc-200 editorial-shadow">
+<div class="flex items-start justify-between px-6 py-5 border-b border-zinc-200">
+<div>
+<h3 class="font-headline text-2xl font-extrabold text-zinc-900">Fale com um especialista</h3>
+<p class="text-sm text-zinc-600 mt-1">Preencha o formulário e nossa equipe entra em contato.</p>
+</div>
+<button type="button" class="text-zinc-500 hover:text-zinc-900" data-close-lead-modal aria-label="Fechar formulário">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form id="lead-form" class="px-6 py-6 space-y-5">
+<div>
+<label for="lead-name" class="block text-xs font-bold tracking-widest uppercase text-zinc-700 mb-2">Nome</label>
+<input id="lead-name" name="nome" type="text" required class="w-full border border-zinc-300 px-4 py-3 text-sm focus:border-zinc-900 focus:ring-0" placeholder="Seu nome completo"/>
+</div>
+<div>
+<label for="lead-whatsapp" class="block text-xs font-bold tracking-widest uppercase text-zinc-700 mb-2">WhatsApp</label>
+<input id="lead-whatsapp" name="whatsapp" type="tel" required class="w-full border border-zinc-300 px-4 py-3 text-sm focus:border-zinc-900 focus:ring-0" placeholder="(00) 00000-0000"/>
+</div>
+<div>
+<label for="lead-email" class="block text-xs font-bold tracking-widest uppercase text-zinc-700 mb-2">Email</label>
+<input id="lead-email" name="email" type="email" required class="w-full border border-zinc-300 px-4 py-3 text-sm focus:border-zinc-900 focus:ring-0" placeholder="voce@empresa.com"/>
+</div>
+<div>
+<label for="lead-revenue" class="block text-xs font-bold tracking-widest uppercase text-zinc-700 mb-2">Faturamento Mensal</label>
+<select id="lead-revenue" name="faturamento_mensal" required class="w-full border border-zinc-300 px-4 py-3 text-sm bg-white focus:border-zinc-900 focus:ring-0">
+<option value="">Selecione uma faixa</option>
+<option>Até 30 mil por mês</option>
+<option>De 30 mil à 100 mil por mês</option>
+<option>De 100 à 500 mil por mês</option>
+<option>De 500 mil à 1 milhão por mês</option>
+<option>Acima de 1 milhão por mês</option>
+</select>
+</div>
+<div class="pt-2">
+<button type="submit" class="w-full bg-primary text-on-primary px-6 py-4 text-sm font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors">Enviar inscrição</button>
+</div>
+<p id="lead-form-feedback" class="hidden text-sm text-emerald-700 font-medium">Inscrição recebida. Integração com webhook/API pronta para ser conectada.</p>
+</form>
+</div>
+</div>
+</div>
+<div id="pillar-modal" class="fixed inset-0 z-[71] hidden" aria-hidden="true">
+<div class="absolute inset-0 bg-black/70" data-close-pillar-modal></div>
+<div class="relative z-10 min-h-full flex items-center justify-center p-4">
+<div class="w-full max-w-3xl bg-white border border-zinc-200 editorial-shadow">
+<div id="pillar-modal-accent" class="h-1.5 bg-[#1F9CD7]"></div>
+<div class="px-6 py-5 border-b border-zinc-200 flex items-start justify-between gap-4">
+<div>
+<p id="pillar-modal-counter" class="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-2">Pilar de</p>
+<h3 id="pillar-modal-title" class="font-headline text-3xl font-extrabold text-zinc-900">Financeiro</h3>
+<p id="pillar-modal-subtitle" class="text-sm text-zinc-600 mt-2">Margem, caixa e previsibilidade financeira.</p>
+</div>
+<button type="button" class="text-zinc-500 hover:text-zinc-900" data-close-pillar-modal aria-label="Fechar carrossel de pilares">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-6 py-6">
+<p id="pillar-modal-description" class="text-base text-zinc-700 leading-relaxed"></p>
+</div>
+<div class="px-6 py-5 border-t border-zinc-200 flex items-center justify-between gap-4">
+<button type="button" id="pillar-prev" class="px-4 py-2 border border-zinc-300 text-sm font-bold uppercase tracking-wider hover:bg-zinc-100 transition-colors">Anterior</button>
+<div id="pillar-modal-dots" class="flex items-center gap-2" aria-hidden="true"></div>
+<button type="button" id="pillar-next" class="px-4 py-2 border border-zinc-300 text-sm font-bold uppercase tracking-wider hover:bg-zinc-100 transition-colors">Próximo</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const card = document.getElementById("gmv-progress-card");
+    const valueEl = document.getElementById("gmv-level-value");
+    const barEl = document.getElementById("gmv-progress-bar");
+    const titleEl = document.getElementById("gmv-level-title");
+    const descEl = document.getElementById("gmv-level-description");
+
+    if (!card || !valueEl || !barEl || !titleEl || !descEl) return;
+
+    const levels = [
+      {
+        level: 1,
+        description: "Empresa no improviso — tudo é urgente, o dono apaga incêndio o dia inteiro e a operação depende de “quem lembra” e “quem dá conta”."
+      },
+      {
+        level: 2,
+        description: "Empresa com algum controle — já tem ferramentas e algumas rotinas, mas nada sustenta; começa, para, volta ao caos e vive de retrabalho."
+      },
+      {
+        level: 3,
+        description: "Empresa com processo claro — papéis definidos, POPs funcionando, rotina semanal rodando e decisões menos no feeling e mais no que está acontecendo de verdade."
+      },
+      {
+        level: 4,
+        description: "Empresa previsível e escalável — indicadores, reuniões que resolvem, equipe executa com autonomia e o dono sai do operacional sem a empresa desandar."
+      },
+      {
+        level: 5,
+        description: "Empresa de alta maturidade — operação roda como sistema, melhoria contínua vira cultura e o dono tem liberdade para crescer, inovar e viver sem culpa."
+      }
+    ];
+
+    const total = levels.length;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const stepDuration = prefersReducedMotion ? 0 : 1200;
+
+    function renderStep(index) {
+      const item = levels[index];
+      valueEl.textContent = "Level " + item.level;
+      titleEl.textContent = "Level " + item.level;
+      descEl.textContent = item.description;
+      barEl.style.width = ((item.level / total) * 100).toFixed(0) + "%";
+    }
+
+    let step = 0;
+    renderStep(step);
+
+    if (prefersReducedMotion) return;
+
+    setInterval(function () {
+      step = (step + 1) % total;
+      renderStep(step);
+    }, stepDuration);
+  })();
+</script>
+<script>
+  (function () {
+    const modal = document.getElementById("pillar-modal");
+    const openButtons = document.querySelectorAll("[data-open-pillar-modal]");
+    const closeButtons = document.querySelectorAll("[data-close-pillar-modal]");
+    const titleEl = document.getElementById("pillar-modal-title");
+    const subtitleEl = document.getElementById("pillar-modal-subtitle");
+    const descEl = document.getElementById("pillar-modal-description");
+    const counterEl = document.getElementById("pillar-modal-counter");
+    const accentEl = document.getElementById("pillar-modal-accent");
+    const dotsEl = document.getElementById("pillar-modal-dots");
+    const prevBtn = document.getElementById("pillar-prev");
+    const nextBtn = document.getElementById("pillar-next");
+
+    if (!modal || !openButtons.length) return;
+
+    const pillars = [
+      {
+        title: "Financeiro",
+        subtitle: "Margem, caixa e previsibilidade financeira.",
+        description: "Estruturamos indicadores financeiros práticos para você enxergar lucro real, proteger o caixa e decidir com segurança, sem depender apenas do saldo bancário do dia.",
+        color: "#1F9CD7"
+      },
+      {
+        title: "Estruturação Comercial",
+        subtitle: "Processo comercial previsível e escalável.",
+        description: "Organizamos funil, rotina e gestão de oportunidades para reduzir variação nas vendas e construir uma máquina comercial com cadência e taxa de conversão controladas.",
+        color: "#FB2B2B"
+      },
+      {
+        title: "Marketing",
+        subtitle: "Aquisição simples, clara e orientada a resultado.",
+        description: "Simplificamos o marketing para operação enxuta, com foco em canais e ações que geram demanda qualificada sem aumentar complexidade desnecessária.",
+        color: "#6161FF"
+      },
+      {
+        title: "Liderança e Recursos Humanos",
+        subtitle: "Time comprometido, alinhado e com padrão de entrega.",
+        description: "Definimos papéis, rituais de acompanhamento e critérios de performance para elevar responsabilidade do time e reduzir dependência direta do dono em cada tarefa.",
+        color: "#FDAA3D"
+      },
+      {
+        title: "Gestão e estratégia",
+        subtitle: "Governança leve para sustentar crescimento.",
+        description: "Conectamos operação e estratégia com rotinas de gestão, prioridades claras e acompanhamento executivo para crescimento consistente e decisões menos reativas.",
+        color: "#00CC72"
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function buildDots() {
+      if (!dotsEl) return;
+      dotsEl.innerHTML = "";
+      pillars.forEach(function (_, index) {
+        const dot = document.createElement("span");
+        dot.className = "h-2 w-2 rounded-full bg-zinc-300";
+        dot.setAttribute("data-pillar-dot", String(index));
+        dotsEl.appendChild(dot);
+      });
+    }
+
+    function render(index) {
+      const item = pillars[index];
+      currentIndex = index;
+      if (titleEl) titleEl.textContent = item.title;
+      if (subtitleEl) subtitleEl.textContent = item.subtitle;
+      if (descEl) descEl.textContent = item.description;
+      if (counterEl) counterEl.textContent = "Pilar de";
+      if (accentEl) accentEl.style.backgroundColor = item.color;
+      if (dotsEl) {
+        Array.from(dotsEl.children).forEach(function (dot, dotIndex) {
+          dot.className = dotIndex === index ? "h-2 w-2 rounded-full" : "h-2 w-2 rounded-full bg-zinc-300";
+          if (dotIndex === index) dot.style.backgroundColor = item.color;
+          else dot.style.backgroundColor = "";
+        });
+      }
+    }
+
+    function openModal(index) {
+      render(index);
+      modal.classList.remove("hidden");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeModal() {
+      modal.classList.add("hidden");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    buildDots();
+
+    openButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const index = Number(button.getAttribute("data-open-pillar-modal") || 0);
+        openModal(index);
+      });
+    });
+
+    closeButtons.forEach(function (button) {
+      button.addEventListener("click", closeModal);
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        const nextIndex = (currentIndex - 1 + pillars.length) % pillars.length;
+        render(nextIndex);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        const nextIndex = (currentIndex + 1) % pillars.length;
+        render(nextIndex);
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (modal.classList.contains("hidden")) return;
+      if (event.key === "Escape") closeModal();
+      if (event.key === "ArrowLeft") prevBtn && prevBtn.click();
+      if (event.key === "ArrowRight") nextBtn && nextBtn.click();
+    });
+  })();
+</script>
+<script>
+  (function () {
+    const modal = document.getElementById("lead-modal");
+    const openButtons = document.querySelectorAll("[data-open-lead-modal]");
+    const closeButtons = document.querySelectorAll("[data-close-lead-modal]");
+    const form = document.getElementById("lead-form");
+    const feedback = document.getElementById("lead-form-feedback");
+
+    if (!modal) return;
+
+    function openModal() {
+      modal.classList.remove("hidden");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeModal() {
+      modal.classList.add("hidden");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    openButtons.forEach(function (button) {
+      button.addEventListener("click", openModal);
+    });
+
+    closeButtons.forEach(function (button) {
+      button.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeModal();
+    });
+
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        // TODO: integrar aqui com webhook ou API.
+        if (feedback) feedback.classList.remove("hidden");
+        form.reset();
+      });
+    }
+  })();
+</script>
+</body></html>
+
+
+
