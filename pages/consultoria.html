@@ -1,67 +1,432 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-BR" class="light">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Five Level Group | Consultoria</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style>
-    .gradient-bar { background: linear-gradient(90deg, #FDAA3D 0%, #FB2B2B 25%, #00CC72 50%, #1F9CD7 75%, #6161FF 100%); }
-    .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(0,0,0,.06); }
-  </style>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@200;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary": "#101010",
+                "surface-variant": "#e4e2e1",
+                "surface-container-high": "#eae7e7",
+                "primary-container": "#252525",
+                "on-tertiary-container": "#c57c06",
+                "on-error": "#ffffff",
+                "surface-container": "#f0eded",
+                "on-tertiary-fixed": "#2b1700",
+                "on-secondary": "#ffffff",
+                "on-primary-container": "#8d8c8c",
+                "tertiary-fixed": "#ffddba",
+                "tertiary-container": "#382000",
+                "inverse-primary": "#c8c6c5",
+                "inverse-surface": "#303030",
+                "inverse-on-surface": "#f3f0ef",
+                "surface-container-highest": "#e4e2e1",
+                "surface-container-lowest": "#ffffff",
+                "surface": "#fcf9f8",
+                "background": "#fcf9f8",
+                "secondary": "#00658f",
+                "on-surface-variant": "#444748",
+                "on-tertiary-fixed-variant": "#663e00",
+                "on-primary": "#ffffff",
+                "tertiary": "#1c0d00",
+                "secondary-fixed": "#c7e7ff",
+                "on-secondary-fixed": "#001e2e",
+                "on-secondary-container": "#004c6d",
+                "on-primary-fixed-variant": "#474746",
+                "primary-fixed-dim": "#c8c6c5",
+                "secondary-fixed-dim": "#85cfff",
+                "primary-fixed": "#e4e2e1",
+                "on-tertiary": "#ffffff",
+                "surface-dim": "#dcd9d9",
+                "surface-bright": "#fcf9f8",
+                "on-error-container": "#93000a",
+                "tertiary-fixed-dim": "#ffb964",
+                "on-surface": "#1b1c1c",
+                "on-secondary-fixed-variant": "#004c6c",
+                "surface-container-low": "#f6f3f2",
+                "error-container": "#ffdad6",
+                "error": "#ba1a1a",
+                "on-background": "#1b1c1c",
+                "secondary-container": "#55c0fd",
+                "surface-tint": "#5f5e5e",
+                "outline": "#747878",
+                "outline-variant": "#c4c7c7",
+                "on-primary-fixed": "#1b1c1c"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .architectural-grid {
+            background-image: radial-gradient(circle, #e4e2e1 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .gradient-bar {
+            background: linear-gradient(90deg, #FDAA3D 0%, #FB2B2B 25%, #00CC72 50%, #1F9CD7 75%, #6161FF 100%);
+        }
+        .editorial-shadow {
+            box-shadow: 0 32px 64px -12px rgba(16, 16, 16, 0.04);
+        }
+    </style>
 </head>
-<body class="bg-[#fcf9f8] text-zinc-900 font-[Inter] selection:bg-sky-200/40">
-  <div class="fixed top-0 left-0 w-full h-[2px] gradient-bar z-[60]"></div>
-  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-6 md:px-12 py-4">
-    <a href="../index.html" class="block" aria-label="Five Level Group">
-      <img src="../assets/images/logo.png" alt="Five Level Group" class="h-11 w-auto object-contain" />
-    </a>
-    <div class="hidden md:flex items-center gap-8">
-      <a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#FDAA3D] pb-1 transition-colors" href="../index.html">LEVEL 5</a>
-      <a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#1F9CD7] pb-1 transition-colors" href="./mentoria.html">Mentoria</a>
-      <a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#6161FF] pb-1 transition-colors" href="./academia.html">Academia</a>
-      <a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#00CC72] pb-1 transition-colors" href="./conselho.html">Conselho</a>
-      <a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#FDAA3D] pb-1 transition-colors" href="./ferramentas.html">Ferramentas</a>
-      <a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#FB2B2B] pb-1 transition-colors" href="./treinamentos.html">Treinamentos</a>
-    </div>
-    <a href="../index.html" class="bg-zinc-900 text-white px-5 py-2 text-xs font-bold uppercase tracking-wider hover:bg-zinc-800 transition-colors">Voltar ao Site</a>
-  </nav>
+<body class="bg-background text-on-background font-body selection:bg-orange-200">
+<!-- TopNavBar -->
+<div class="fixed top-0 left-0 w-full h-[2px] gradient-bar z-[60]"></div>
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-6 md:px-12 py-4">
+<a href="../index.html" class="block" aria-label="Five Level Group">
+<img src="../assets/images/logo.png" alt="Five Level Group" class="h-11 w-auto object-contain"/>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#FDAA3D] pb-1 transition-colors" href="../index.html">LEVEL 5</a>
+<a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#1F9CD7] pb-1 transition-colors" href="./mentoria.html">Mentoria</a>
+<a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#6161FF] pb-1 transition-colors" href="./academia.html">Academia</a>
+<a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#00CC72] pb-1 transition-colors" href="./conselho.html">Conselho</a>
+<a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#FDAA3D] pb-1 transition-colors" href="./ferramentas.html">Ferramentas</a>
+<a class="font-bold uppercase text-xs text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent hover:border-[#FB2B2B] pb-1 transition-colors" href="./treinamentos.html">Treinamentos</a>
+</div>
+<button type="button" data-open-lead-modal="" class="bg-zinc-900 text-white px-5 py-2 text-xs font-bold uppercase tracking-wider hover:bg-zinc-800 transition-colors">Fale Conosco</button>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex flex-col justify-center px-12 max-w-screen-2xl mx-auto overflow-hidden architectural-grid">
+<div class="max-w-4xl space-y-8 relative z-10">
+<div class="w-16 h-1 gradient-bar mb-12"></div>
+<h1 class="font-headline font-extrabold text-7xl md:text-8xl tracking-tighter text-primary leading-[0.9] uppercase">
+                    Precisão <br/>
+<span class="text-neutral-400 italic font-light">Cirúrgica</span> <br/>
+                    para sua Operação.
+                </h1>
+<p class="max-w-2xl text-xl text-on-surface-variant font-light leading-relaxed">
+                    Identificamos o único gargalo que impede seu crescimento exponencial hoje. Aplicamos o Princípio de Pareto para que 20% do esforço gere 80% do seu resultado financeiro e operacional.
+                </p>
+<div class="flex gap-4 pt-8">
+<a href="https://calendar.app.google/h4aX8hQeoQoZ8jGq5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary text-on-primary px-10 py-4 rounded-sm font-bold text-base tracking-tight hover:bg-primary-container transition-all">
+                        Agendar diagnóstico gratuito
+                    </a>
+</div>
+</div>
+<!-- Decorative Visual -->
+<div class="absolute right-0 bottom-0 w-1/3 h-full opacity-10 pointer-events-none border-l border-outline-variant"></div>
+</section>
+<!-- Frentes de Atuação (Bento Grid Style) -->
+<section class="py-24 px-12 max-w-screen-2xl mx-auto bg-surface-container-low">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<span class="font-label text-xs tracking-[0.3em] uppercase text-on-surface-variant">Frentes de Atuação</span>
+<h2 class="font-headline text-5xl font-bold tracking-tighter mt-4 uppercase">Especialidades</h2>
+</div>
+<p class="max-w-md text-on-surface-variant font-medium leading-relaxed">
+                    Cinco pilares de eficiência desenhados para sustentar o crescimento sustentável da sua empresa.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-1">
+<!-- Financeiro -->
+<div class="md:col-span-4 bg-surface-container-lowest p-8 flex flex-col justify-between min-h-[320px] relative group overflow-hidden transition-all duration-300">
+<div class="absolute top-0 left-0 w-full h-1 bg-[#1F9CD7]"></div>
+<div>
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="payments">payments</span>
+<h3 class="font-headline text-2xl font-bold mt-6 mb-4">Financeiro</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Fluxo de caixa, margem de contribuição e DRE gerencial para decisões baseadas em lucro real.</p>
+</div>
+</div>
+<!-- Comercial -->
+<div class="md:col-span-8 bg-surface-container-lowest p-8 flex flex-col justify-between min-h-[320px] relative group overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-[#FB2B2B]"></div>
+<div class="flex flex-col md:flex-row gap-8 justify-between">
+<div class="max-w-sm">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="trending_up">trending_up</span>
+<h3 class="font-headline text-2xl font-bold mt-6 mb-4">Comercial</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Máquina de vendas previsível. CRM, funil de conversão e treinamento de alta performance para o time de frente.</p>
+</div>
+</div>
+</div>
+<!-- Marketing -->
+<div class="md:col-span-5 bg-surface-container-lowest p-8 flex flex-col justify-between min-h-[320px] relative group overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-[#6161FF]"></div>
+<div>
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="campaign">campaign</span>
+<h3 class="font-headline text-2xl font-bold mt-6 mb-4">Marketing</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Posicionamento de marca e aquisição de leads qualificados. Branding que gera autoridade e ROI positivo.</p>
+</div>
+</div>
+<!-- RH -->
+<div class="md:col-span-3 bg-surface-container-lowest p-8 flex flex-col justify-between min-h-[320px] relative group overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-[#FDAA3D]"></div>
+<div>
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="groups">groups</span>
+<h3 class="font-headline text-2xl font-bold mt-6 mb-4">RH</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Cultura forte, recrutamento técnico e retenção de talentos que vestem a camisa.</p>
+</div>
+</div>
+<!-- Gestão & Estratégia -->
+<div class="md:col-span-4 bg-surface-container-lowest p-8 flex flex-col justify-between min-h-[320px] relative group overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-[#00CC72]"></div>
+<div>
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="account_tree">account_tree</span>
+<h3 class="font-headline text-2xl font-bold mt-6 mb-4">Gestão &amp; Estratégia</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">O topo da pirâmide. Visão de longo prazo, KPIs globais e governança para a escala infinita.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Metodologia Pareto Section -->
+<section class="py-32 px-12 max-w-screen-2xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="w-full aspect-square bg-surface-container border border-outline-variant flex items-end p-1">
+<div class="w-[20%] h-full bg-primary flex flex-col justify-center items-center text-white relative overflow-hidden group">
+<span class="font-headline text-4xl font-black rotate-[-90deg]">20%</span>
+<div class="absolute inset-0 gradient-bar opacity-20"></div>
+</div>
+<div class="w-[80%] h-full bg-surface-container-high flex flex-col justify-center items-center text-primary/20 p-12 text-center">
+<span class="font-headline text-2xl font-bold mb-4 uppercase tracking-tighter">O Ruído do Dia a Dia</span>
+<p class="text-xs uppercase tracking-widest font-bold">Cargas Administrativas Irrelevantes</p>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-white editorial-shadow p-6 flex flex-col justify-center border-t-2 border-orange-400">
+<span class="font-headline text-5xl font-black text-primary">80%</span>
+<span class="text-[10px] uppercase font-bold tracking-widest mt-2">Do seu Resultado Final</span>
+</div>
+</div>
+<div class="space-y-8">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-neutral-400">Nossa Filosofia</span>
+<h2 class="font-headline text-6xl font-bold tracking-tighter uppercase leading-[0.95]">O Princípio de <br/>Pareto <span class="text-neutral-300">(80/20)</span></h2>
+<p class="text-xl font-light leading-relaxed text-on-surface-variant italic">
+                        "A maioria das empresas morre por indigestão de oportunidades, não por inanição."
+                    </p>
+<p class="text-on-surface-variant leading-relaxed">
+                        Muitas consultorias tentam mudar tudo ao mesmo tempo, gerando fadiga operacional e resistência da equipe. Nós fazemos o oposto. Mapeamos os processos e focamos exclusivamente nos 20% das ações que trarão 80% do retorno financeiro imediato. Menos mudança, mais impacto.
+                    </p>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<div class="flex gap-12">
+<div>
+<span class="block font-headline text-3xl font-bold">0%</span>
+<span class="text-[10px] uppercase font-bold text-neutral-400 tracking-widest">Sobrecarga</span>
+</div>
+<div>
+<span class="block font-headline text-3xl font-bold">100%</span>
+<span class="text-[10px] uppercase font-bold text-neutral-400 tracking-widest">Foco em ROI</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mentalidade de Gestão Section -->
+<section class="py-24 px-12 bg-primary text-white">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-20 text-center md:text-left">
+<h2 class="font-headline text-5xl font-extrabold tracking-tighter uppercase mb-6">Mentalidade de Gestão</h2>
+<p class="max-w-2xl text-neutral-400 font-light text-lg">A base para decisões assertivas não é o "feeling", é o dado interpretado através de uma cultura de excelência.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="space-y-6">
+<div class="text-orange-400 font-headline text-8xl font-black opacity-10 leading-none">01</div>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight -mt-12">Planejamento</h3>
+<p class="text-neutral-400 font-light leading-relaxed">Onde queremos chegar? Sem um destino claro, qualquer caminho serve. Desdobramos o macro em metas semanais atingíveis.</p>
+</div>
+<div class="space-y-6">
+<div class="text-orange-400 font-headline text-8xl font-black opacity-10 leading-none">02</div>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight -mt-12">Cultura</h3>
+<p class="text-neutral-400 font-light leading-relaxed">Processos não rodam sozinhos. Criamos o ambiente onde as pessoas certas se sentem donas do negócio e do resultado.</p>
+</div>
+<div class="space-y-6">
+<div class="text-orange-400 font-headline text-8xl font-black opacity-10 leading-none">03</div>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight -mt-12">Indicadores</h3>
+<p class="text-neutral-400 font-light leading-relaxed">O que não se mede, não se gerencia. Implementamos dashboards em tempo real para monitorar a saúde da operação.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Processo de Implementação -->
+<section class="py-32 px-12 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center mb-24">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-neutral-400 mb-4">O Fluxo de Trabalho</span>
+<h2 class="font-headline text-6xl font-bold tracking-tighter uppercase text-center">Jornada de Transformação</h2>
+</div>
+<div class="relative">
+<!-- Connector Line -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-outline-variant -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+<!-- Step 1 -->
+<div class="bg-white p-8 border border-outline-variant hover:border-primary transition-all group shadow-sm">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-4 uppercase tracking-tight">Mapeamento</h4>
+<p class="text-sm text-on-surface-variant font-light">Diagnóstico profundo para encontrar o gargalo mestre da sua operação atual.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white p-8 border border-outline-variant hover:border-primary transition-all group shadow-sm">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-4 uppercase tracking-tight">POPs</h4>
+<p class="text-sm text-on-surface-variant font-light">Criação de Procedimentos Operacionais Padrão. A inteligência no papel, não nas pessoas.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white p-8 border border-outline-variant hover:border-primary transition-all group shadow-sm">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-4 uppercase tracking-tight">Rotina</h4>
+<p class="text-sm text-on-surface-variant font-light">Implementação prática. Acompanhamento diário para garantir que o plano seja executado.</p>
+</div>
+<!-- Step 4 -->
+<div class="bg-white p-8 border border-outline-variant hover:border-primary transition-all group shadow-sm">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-4 uppercase tracking-tight">Performance</h4>
+<p class="text-sm text-on-surface-variant font-light">Ajuste fino dos indicadores e escala. Colheita dos resultados e novos saltos de crescimento.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-12 mb-12">
+<div class="max-w-5xl mx-auto bg-surface-container-high p-12 md:p-24 relative overflow-hidden text-center md:text-left">
+<div class="absolute top-0 left-0 w-1 h-full gradient-bar"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-primary mb-8">
+                        Pronto para o <br/>Nível 5?
+                    </h2>
+<p class="text-xl text-on-surface-variant font-light max-w-xl mb-12">
+                        Agende seu diagnóstico gratuito com nossos consultores seniores. Vamos encontrar seus 20% agora.
+                    </p>
+<div class="flex flex-col md:flex-row gap-6">
+<a href="https://calendar.app.google/h4aX8hQeoQoZ8jGq5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary text-on-primary px-12 py-5 rounded-sm font-bold text-lg tracking-tight hover:bg-primary-container transition-all uppercase shadow-xl">
+                            Agendar Diagnóstico Gratuito
+                        </a>
+<button type="button" data-open-lead-modal="" class="border border-outline px-12 py-5 rounded-sm font-bold text-lg tracking-tight hover:bg-white transition-all uppercase">
+                            Fale com um especialista
+                        </button>
+</div>
+</div>
+<!-- Subtle Background Image Decoration -->
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="minimalist abstract architectural lines and shadows representing precision and structural integrity in business" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjHS-nX1Uuo_0F7lO0LYLRnIsc4-EZHqme7eXEeY31edLWPLu4ROBC2UN9-gBjKx0UA5Idxe-EwdxK_9Witl6Mbz9wfuzBdaCEU666oOxebOYAMKIQWbxGvvsc-p_tuPlQzsN4LNqYJjzyyU9NKJmeMclE37rbLp-HaqWekyln-TqkAT5ka6dVNwAjMWPKvXwSSV2eTTRstffxXXhnjX2HJm0wTz9zPLDI6dSKBG19isWqTF5cypB7t6myFLL9rxWVMrQJ0xSdUn_W"/>
+</div>
+</div>
+</section>
+</main>
+<div id="lead-modal" class="fixed inset-0 z-[70] hidden" aria-hidden="true">
+<div class="absolute inset-0 bg-black/70" data-close-lead-modal></div>
+<div class="relative z-10 min-h-full flex items-center justify-center p-4">
+<div class="w-full max-w-2xl bg-white border border-zinc-200 editorial-shadow">
+<div class="flex items-start justify-between px-6 py-5 border-b border-zinc-200">
+<div>
+<h3 class="font-headline text-2xl font-extrabold text-zinc-900">Fale com um especialista</h3>
+<p class="text-sm text-zinc-600 mt-1">Preencha o formulário e nossa equipe entra em contato.</p>
+</div>
+<button type="button" class="text-zinc-500 hover:text-zinc-900" data-close-lead-modal aria-label="Fechar formulário">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form id="lead-form" class="px-6 py-6 space-y-5">
+<div>
+<label for="lead-name" class="block text-xs font-bold tracking-widest uppercase text-zinc-700 mb-2">Nome</label>
+<input id="lead-name" name="nome" type="text" required class="w-full border border-zinc-300 px-4 py-3 text-sm focus:border-zinc-900 focus:ring-0" placeholder="Seu nome completo"/>
+</div>
+<div>
+<label for="lead-whatsapp" class="block text-xs font-bold tracking-widest uppercase text-zinc-700 mb-2">WhatsApp</label>
+<input id="lead-whatsapp" name="whatsapp" type="tel" required class="w-full border border-zinc-300 px-4 py-3 text-sm focus:border-zinc-900 focus:ring-0" placeholder="(00) 00000-0000"/>
+</div>
+<div>
+<label for="lead-email" class="block text-xs font-bold tracking-widest uppercase text-zinc-700 mb-2">Email</label>
+<input id="lead-email" name="email" type="email" required class="w-full border border-zinc-300 px-4 py-3 text-sm focus:border-zinc-900 focus:ring-0" placeholder="voce@empresa.com"/>
+</div>
+<div>
+<label for="lead-revenue" class="block text-xs font-bold tracking-widest uppercase text-zinc-700 mb-2">Faturamento Mensal</label>
+<select id="lead-revenue" name="faturamento_mensal" required class="w-full border border-zinc-300 px-4 py-3 text-sm bg-white focus:border-zinc-900 focus:ring-0">
+<option value="">Selecione uma faixa</option>
+<option>Até 30 mil por mês</option>
+<option>De 30 mil à 100 mil por mês</option>
+<option>De 100 à 500 mil por mês</option>
+<option>De 500 mil à 1 milhão por mês</option>
+<option>Acima de 1 milhão por mês</option>
+</select>
+</div>
+<div class="pt-2">
+<button type="submit" class="w-full bg-primary text-on-primary px-6 py-4 text-sm font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors">Enviar inscrição</button>
+</div>
+<p id="lead-form-feedback" class="hidden text-sm text-emerald-700 font-medium">Inscrição recebida. Integração com webhook/API pronta para ser conectada.</p>
+</form>
+</div>
+</div>
+</div>
+<div class="w-full h-[2px] gradient-bar"></div>
+<footer class="bg-zinc-950 text-zinc-200 px-6 md:px-12 py-12">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<img src="../assets/images/logo-b.png" alt="Five Level Group" class="h-12 w-auto object-contain"/>
+<p class="text-sm text-zinc-400">© 2024 Five Level Group. Architectural Ledger Design.</p>
+</div>
+</footer>
+<script>
+  (function () {
+    const modal = document.getElementById("lead-modal");
+    const openButtons = document.querySelectorAll("[data-open-lead-modal]");
+    const closeButtons = document.querySelectorAll("[data-close-lead-modal]");
+    const form = document.getElementById("lead-form");
+    const feedback = document.getElementById("lead-form-feedback");
 
-  <main class="pt-32 pb-16 min-h-screen">
-    <section class="px-6 md:px-12">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
-        <div class="bg-white border border-zinc-200 p-8 md:p-12 editorial-shadow">
-          <div class="h-1 w-28 gradient-bar mb-8"></div>
-          <p class="text-xs uppercase tracking-[0.24em] text-zinc-500 mb-4">Level 5 Group</p>
-          <h1 class="font-[Manrope] text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">Consultoria</h1>
-          <p class="text-lg text-zinc-700 mb-3">Implementação prática da Gestão Mínima Viável</p>
-          <p class="text-base text-zinc-600 leading-relaxed">Entramos na operação para organizar processos, rituais e indicadores com foco em resultado real.</p>
-        </div>
-        <div class="bg-zinc-950 text-white p-8 md:p-12 editorial-shadow flex flex-col justify-between">
-          <div>
-            <h2 class="font-[Manrope] text-2xl md:text-3xl font-bold mb-8">Como essa solução ajuda sua empresa</h2>
-            <ul class="space-y-4 text-zinc-100"><li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-[#FDAA3D]"></span><span class="leading-relaxed">Mapeamento e priorização dos gargalos operacionais</span></li><li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-[#FDAA3D]"></span><span class="leading-relaxed">Implantação de POPs e rotina de acompanhamento</span></li><li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-[#FDAA3D]"></span><span class="leading-relaxed">Painel de indicadores e plano de ação semanal</span></li></ul>
-          </div>
-          <div class="mt-10 pt-6 border-t border-zinc-800">
-            <a href="../index.html" class="inline-block bg-white text-zinc-950 px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-zinc-200 transition-colors">Falar com um especialista</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    if (!modal) return;
 
-  <div class="w-full h-[2px] gradient-bar"></div>
-  <footer class="bg-zinc-950 text-zinc-200 px-6 md:px-12 py-12">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <img src="../assets/images/logo-b.png" alt="Five Level Group" class="h-12 w-auto object-contain" />
-      <p class="text-sm text-zinc-400">© 2024 Five Level Group. Architectural Ledger Design.</p>
-    </div>
-  </footer>
-</body>
-</html>
+    function openModal() {
+      modal.classList.remove("hidden");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("overflow-hidden");
+    }
 
+    function closeModal() {
+      modal.classList.add("hidden");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("overflow-hidden");
+    }
 
+    openButtons.forEach(function (button) {
+      button.addEventListener("click", openModal);
+    });
 
+    closeButtons.forEach(function (button) {
+      button.addEventListener("click", closeModal);
+    });
 
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeModal();
+    });
 
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (feedback) feedback.classList.remove("hidden");
+        form.reset();
+      });
+    }
+  })();
+</script>
+</body></html>
