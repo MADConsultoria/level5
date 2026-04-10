@@ -117,6 +117,11 @@
         .editorial-shadow {
             box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.04);
         }
+        .page-name-tag {
+            font-family: "Balgin", "Manrope", sans-serif;
+            letter-spacing: 0.8em;
+            font-weight: 600;
+        }
         .section-watermark {
             position: relative;
             overflow: hidden;
@@ -157,9 +162,12 @@
 <div class="fixed top-0 left-0 w-full h-[2px] gradient-bar z-[60]"></div>
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-12 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-4">
 <a href="./index.html" class="block" aria-label="Five Level Group">
 <img src="./assets/images/logo.png" alt="Five Level Group" class="h-12 w-auto object-contain"/>
 </a>
+<span class="page-name-tag hidden lg:block text-[22px] text-zinc-700 uppercase whitespace-nowrap">GROUP</span>
+</div>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-manrope tracking-tight font-bold uppercase text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border-b-2 border-transparent hover:border-[#FB2B2B] pb-1 transition-colors" href="./pages/consultoria/">Consultoria</a>
 <a class="font-manrope tracking-tight font-bold uppercase text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white border-b-2 border-transparent hover:border-[#1F9CD7] pb-1 transition-colors" href="./pages/mentoria/">Mentoria</a>
@@ -828,6 +836,7 @@
   })();
 </script>
 </body></html>
+
 
 
 
